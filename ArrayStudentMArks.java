@@ -23,14 +23,16 @@ public class ArrayStudentMArks
 			System.out.print("[" + marks[len] + "]"); 
 		}
 		System.out.println();
-		System.out.print("Enter Highest marks or above: ");
-		high = sc.nextInt();
+
+		high = marks[0];
 		for (len = 0; len < marks.length; len++) //loop to print
 		{	
 			if (marks[len] > high) 
+				high = marks[len];
 			{
-				System.out.println("The highest marks is "+"[" + marks[len] + "]"); 
-			}					
-		}	
+				 
+			}
+		}
+		System.out.println("The highest marks is "+"[" + high + "]");
 	}
 }
