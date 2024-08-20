@@ -68,9 +68,17 @@ public class SamsungTViheritnace
 {
 	public static void main (String[] args) 
 	{
+		Scanner scan = new Scanner(System.in);
+		String exit;
+		do
+		{
 		TV tvobj = new TV();
 		tvobj.TVinput();
 		tvobj.TVpricesOfselectedTv();
 		tvobj.OrderTV();
+		System.out.print("Enter 'YES' / 'NO' for continue or exit shopping.");
+		exit=scan.nextLine();
+		}while(exit.equalsIgnoreCase("yes"));
+		System.out.print("END");
 	}
 }
