@@ -1,10 +1,10 @@
 package oopsExamples;
 import java.util.Scanner;
 
-class Samsung //BASE CLASS 
+class Tv //BASE CLASS 
 {
 	String brand,TVmodel,Specifications;
-	Scanner sc = new Scanner(System.in);   //NICE MEMORY 'JAI'.DECLARE IN BASE CLASS AT BEGIN;
+	Scanner sc = new Scanner(System.in);//NICE MEMORY 'JAI'.DECLARE scanner IN BASE CLASS AT BEGIN;
 	public void TVinput()
 	{
 	    System.out.println("Welcome to Tv Show Room");
@@ -35,7 +35,7 @@ class Samsung //BASE CLASS
 		}	   
 	}
 }
-class TV extends Samsung   //Derived class
+class Samsung extends Tv   //Derived class
 {
 	public void TVpricesOfselectedTv() 
 	{
@@ -44,13 +44,13 @@ class TV extends Samsung   //Derived class
 		price = " 4k(tv)=20K,Qled(tv)=30k,NeoQled(tv)= 60k";
 		System.out.println("Prices of above TV's "+ super.Specifications+ " ," +price);
 	}
-	public void OrderTV() 
+	public void OrderTV() //oder TV method
 	{
 		String order;
 		System.out.print("Do you want to proceed with the order press"
 				+ " yes if want to order else no: ");
-		order=sc.nextLine();
-		if (order.equalsIgnoreCase("yes")) 
+		order=super.sc.nextLine();
+		if (order.equalsIgnoreCase("yes")) //.equalsIgnoreCase used like '==' for string
 		{
 			System.out.println("Order proccessed,THANK YOU FOR SHOPPING IN SAMSUNG HAVE A NICE DAY :)");
 		}
@@ -64,7 +64,7 @@ class TV extends Samsung   //Derived class
 		} 
 	}
 }
-public class SamsungTViheritnace 
+public class TViheritnace 
 {
 	public static void main (String[] args) 
 	{
@@ -72,13 +72,14 @@ public class SamsungTViheritnace
 		String exit;
 		do
 		{
-		TV tvobj = new TV();
+		Samsung tvobj = new Samsung();
 		tvobj.TVinput();
 		tvobj.TVpricesOfselectedTv();
 		tvobj.OrderTV();
 		System.out.print("Enter 'YES' / 'NO' for continue or exit shopping.");
 		exit=scan.nextLine();
-		}while(exit.equalsIgnoreCase("yes"));
+		}
+		while(exit.equalsIgnoreCase("yes"));
 		System.out.print("END");
 	}
 }
