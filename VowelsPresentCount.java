@@ -1,0 +1,31 @@
+package oopsExamples;
+import java.util.Scanner;
+
+public class VowelsPresentCount //class
+{
+	public static void main(String[] args) 
+	{       
+		Scanner sc = new Scanner(System.in);  // Create a Scanner object for user input
+
+		String s1; // Declare String variable
+		int vowelCount = 0; // Declaring Counting variable initially Zero..
+
+		System.out.println("Enter any Sentence: ");
+		s1 = sc.nextLine().toLowerCase();
+
+		// Iterate through each character in the string
+		for(int index = 0; index < s1.length(); index++) 
+		{
+			char character = s1.charAt(index);
+			// Check if the character is '@'
+			if (character == 'a' || character == 'e' || 
+					character == 'i'|| character == 'o'|| character == 'u' ) 
+			{
+				vowelCount++;  // Increment count if Special character is found
+			}
+		}
+		// Print the total count of '@' characters
+		System.out.println("Total number of Vowels are: " + vowelCount);	
+		sc.close(); // Close the scanner
+	}
+}
