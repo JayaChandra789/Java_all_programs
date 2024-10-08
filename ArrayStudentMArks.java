@@ -1,33 +1,33 @@
-package nenu;
 
-import java.util.Scanner;
 
-public class ArrayStudentMArks 
+import java.util.Scanner; //importing Scanner class
+
+public class ArrayStudentMArks  //Mian class student marks
 {
-	public static void main(String[] args) 
+	public static void main(String[] args) //Main method
 	{
 		Scanner sc = new Scanner(System.in); 
-		int len ;
-		int high = 0;
+		int len ; //Member varaibles
+		int high = 0; //Initially zero marks in array
 		int marks[] = new int[3]; // Creating New array to store		
-		System.out.println("Enter marks to print in list "); 
+		System.out.println("Enter marks to print in list ");  //Print message
 		
-		for(len = 0;len < marks.length; len++) 
+		for(len = 0;len < marks.length; len++) //Loop for iteratinf array 3times
 		{
 			System.out.print("Enter marks: ");
 			marks[len] = sc.nextInt();  //input from user stores in array until length match			
 		}		
-		System.out.print("Entered marks are:"); //print combined along with entered numbers 		
-		for (len = 0; len < marks.length; len++) //loop to print
+		System.out.print("Entered marks are:"); //print  message		
+		for (len = 0; len < marks.length; len++) //loop to print toal marks here
 		{			
-			System.out.print("[" + marks[len] + "]"); 
+			System.out.print("[" + marks[len] + "]"); //Using this message
 		}
 		System.out.println();
 
 		high = marks[0];
 		for (len = 0; len < marks.length; len++) //loop to print
 		{	
-			if (marks[len] > high) 
+			if (marks[len] > high) //Condition
 				high = marks[len];
 			{
 				 
