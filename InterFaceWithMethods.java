@@ -1,28 +1,28 @@
 package oopsExamples;
 import java.util.Scanner;
 
-interface Methods
+interface Methods //Interface 
 {
-	Scanner sc = new Scanner(System.in);
-	static void vowelsCount()
+	Scanner sc = new Scanner(System.in); //Object for Scanner Class
+	static void vowelsCount() //
 	{
 		String s1;
 		int vowelCount = 0;
 		
-		System.out.print("Enter any sentence: ");
-		s1=sc.nextLine().toLowerCase();
+		System.out.print("Enter any sentence: "); //Printing message to enter any Sentence
+		s1=sc.nextLine().toLowerCase(); //Taking input from user and Converting into lower case.
 		
-		for (int index = 0 ;index<s1.length();index++) 
+		for (int index = 0 ;index<s1.length();index++)  //For loop for iterating and checking each char present in String
 		{
-			char character = s1.charAt(index);
+			char character = s1.charAt(index); //Checking char at index
 			if (character == 'a' || character == 'e' || character == 'i'
-					|| character == 'o' || character == 'u');
+					|| character == 'o' || character == 'u'); //If condition for checking vowels present in user sentence
 			{
-				System.out.println("");
-				vowelCount++;
+				System.out.println(" ");
+				vowelCount++; //Vowelcount Increment
 			}
 		}
-		System.out.println("Total no of vowels present in snetence: " + vowelCount);
+		System.out.println("Total no of vowels present in sentence: " + vowelCount); //Printing Vowels count
 	}
 	
 	static void consonantsCount()
