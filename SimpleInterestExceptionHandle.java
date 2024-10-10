@@ -88,6 +88,13 @@ class SimpleInterestCal
 		{
 			System.err.println("Principal Exception: " + obj);
 		}
+		/*------------------------------2nd Approach------------------------------*/
+		/*
+		 catch (SimpleInterestRateException | SimpleInterestTimeException | SimpleInterestPrincipalException obj)
+		{
+			System.err.println("Principal Exception: " + obj);
+		}
+		*/
 	}
 }
 /*--------------------Main class--------------------*/
