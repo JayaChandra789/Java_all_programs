@@ -1,0 +1,78 @@
+package oopsExamples;
+import java.util.Scanner;
+/*------------------------1.Custom Exception Creation------------------------*/
+class PhoneNumLenExcpetion extends Exception //class ClassName extends Exception
+{
+	PhoneNumLenExcpetion(String message)     //Constructor(String msg)
+	{
+		super(message);                       //Calling message using super...
+	}
+}
+/*------------------------2.Custom Exception Creation------------------------*/
+class PhoneNumCharExcpetion extends Exception//class ClassName extends Exception
+{
+	PhoneNumCharExcpetion(String message)	//Constructor(String msg)
+	{
+		super(message);                    //Calling message using super...
+	}
+}
+
+class PhoneNumber
+{
+	String phoneNumber;
+	Scanner sc = new Scanner(System.in);
+	PhoneNumber()
+	{
+		System.out.print("Enter 10 Digit Mobile Number: ");
+		phoneNumber =sc.nextLine();
+		System.out.println("Entered Number is: "+ phoneNumber);
+	}
+	/*------------------------------phoneNumberCheck method()------------------------------*/
+	public void phoneNumberCheck()
+	{
+		try
+		{
+			for(int index=0;index<phoneNumber.length();index++) //String.valueOf(phoneNumber).length()
+			{
+				char ch = phoneNumber.charAt(index); //String.valueOf(phoneNumber)
+				if(!Character.isDigit(ch)) // Character.isDigit(varaible_Name)
+				{//Checking And throwing Exception
+					throw new PhoneNumCharExcpetion("Invalid Number:");
+				}				
+			}
+			System.out.println("Entered Number contains only Digits: " +phoneNumber);
+		}
+		catch(PhoneNumCharExcpetion obj) //Catch Block With Catching Exception
+		{
+			System.err.print(obj);
+		}
+	}
+	/*------------------------------phoneNumberLengthCheck method()------------------------------*/
+	public void phoneNumberLen()
+	{
+		try
+		{
+			if (phoneNumber.length()!=10) //Checking And throwing Exception
+			{
+				throw new PhoneNumLenExcpetion("Invalid Length of number");
+			}
+			else
+			{
+				System.out.println("Entered Number Contains 10 digits is: " + phoneNumber);
+			}
+		}
+		catch(PhoneNumLenExcpetion obj) //Catch Block With Catching Exception
+		{
+			System.err.println(obj); //Printing Message and Exception
+		}
+	}
+}
+public class ExcpetionInPhoneNum //Main Class
+{
+	public static void main(String[] args) //Main Method
+	{
+		PhoneNumber phoneNumObj = new PhoneNumber(); //Object Creation
+		phoneNumObj.phoneNumberCheck();// Calling Methods
+		phoneNumObj.phoneNumberLen(); // Calling Methods
+	}
+}
